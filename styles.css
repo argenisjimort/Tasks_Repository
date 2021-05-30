@@ -1,0 +1,309 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  scrollbar-color: var(--action-color)  rgb(48, 48, 48);
+  scrollbar-width: thin;
+}
+
+
+:root{
+  
+  --p-main-1: rgb(62, 187, 177); 
+  
+  --p-bg-1: hsl(0, 0%, 8%);
+  --p-bg-2:  hsl(0,0%, 80%); 
+  --p-bg-3: hsl(0, 0%, 13%);
+  
+  --action-color: var(--p-main-1);
+
+  --dark-section-bg: var(--p-bg-1);
+  --dark-section-text: var(--p-bg-2);
+
+  --dark-btn-bg: var(--p-bg-3);
+  --dark-btn-text: var(--p-bg-2);
+
+  --card-bg: var(--p-bg-3);
+  --card-text: hsl(0,0%,80%);
+}
+
+
+body{
+  font-family: "open sans", sans-serif;
+}
+
+
+
+.btns-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+
+  background: var(--action-color);
+  border: 0;
+  padding: 0 1em;
+  line-height: 1;
+
+  transition: all 250ms 50ms;
+  cursor: pointer;
+}
+
+.invisible-btn{
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.dar-btn {
+  background: var(--dark-btn-bg);
+  color: var(--dark-btn-text);
+}
+
+.light-btn {
+  background: var(--dark-btn-text);
+  color: var(--dark-btn-bg);
+}
+
+
+
+
+.section {
+  padding: 20px 10px;
+}
+
+.form {
+  
+  margin: auto;
+  width: 100%;
+  max-width: 350px;
+
+  background: var(--dark-section-bg);
+  color: var(--dark-section-text);
+  padding: 20px;
+}
+
+.form fieldset {
+  border: 0;
+  display: grid;
+  grid-row-gap: 10px;
+}
+
+.form fieldset legend{
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.input{
+  border-radius: 0px;
+  border: 0px;
+  padding: .5em;
+}
+
+textarea.input{
+  min-height: 150px;
+  max-height: 200px;
+  resize: vertical;
+}
+
+.form-btn {
+  border-radius: 0px;
+  border: 0px;
+  padding: .5em;
+}
+
+.dark-section {
+  background: var(--dark-section-bg);
+  color: var(--dark-section-text);
+}
+
+.cards-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax( 200px, 310px ));
+  grid-gap: 15px 10px;
+  
+
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  padding: 20px 0px;
+
+}
+
+.card-wrap{
+  border: 0px solid red;
+
+  
+}
+
+.card {
+  padding: 10px 20px;
+  background: var(--card-bg);
+  color: var(--card-text);
+  display: grid;
+  row-gap: 10px;
+  grid-row-gap: 10px;
+
+  position: relative;
+  transition: 1s;
+}
+/*
+.card-options-wrap {
+  margin-left: auto;
+  position: relative;
+}
+
+.card-options-wrap .btn{
+  transform: translate(20px, 10px);
+  border: 0px solid red;
+  padding: 0 1em;
+  margin: 0;
+}
+*/
+
+.card-options-list {
+  list-style: none;
+
+  display: grid;
+  gap: 0;
+
+  position: absolute;
+  bottom: 105px;
+  right: 10px;
+
+
+  max-height: 0;
+  height: auto;
+  width: 9.5em;
+
+  overflow: hidden;
+
+  background:hsl(0,0%,17%);
+
+  transition: max-height ease-out 250ms 50ms;
+}
+
+.card-options-list.in {
+  max-height: 7em;
+
+  border: 0px solid red;
+}
+
+.card-option-btn{
+  width: 100%;
+  padding: .8em 1.4em;
+  text-align: left;
+
+  background: var(--dark-section-bg);
+  color: var(--dark-section-text);
+}
+
+.card-option-btn:hover {
+  background: hsl(0,0%,22%);
+}
+
+.card-date{
+  display: block;
+  text-align: center;
+
+  font-weight: 600;
+  font-style: italic;
+}
+
+.card-title{
+  text-align: center;
+  font-size: 1.08em;
+  line-height: .9;
+  margin: auto;
+
+  max-width: 40ch;
+  max-height: 4ex;
+  overflow-y: hidden;
+}
+
+
+
+.card-text {
+  max-height: 20ch;
+  min-height: 140px;
+  overflow-y: hidden;
+
+  margin: .7em 0;
+  padding: .3em 0;
+
+  font-size: .95em;
+  word-break: break-word;
+
+  border-top: .01em solid #fff;
+  border-bottom: .01em solid #fff;
+
+  transition: max-height ease-out 300ms 50ms;
+}
+
+
+.card-text.show{
+  max-height: 45ch;
+  overflow-y: scroll;
+  
+}
+
+.card-text::-webkit-scrollbar {
+  width: 2px;
+}
+
+.card-btn{
+  display: grid;
+  border: 0px solid red;
+  max-width: 4.5em;
+}
+
+.card-btn:hover {
+  filter: brightness(.6);
+}
+
+.card-btn.active{
+  color: var(--action-color);
+}
+
+.card-btn.active:focus, .card-btn.active:hover {
+  filter: none;
+}
+
+.card-btn i{
+  font-size: 1.5em;
+}
+
+.card-id {
+  text-align: right;
+}
+
+.card .card-hidden {
+  display: none;
+}
+
+.card-hidden-btn{
+  display: none;
+}
+
+.card.finished {
+  opacity: .5;
+}
+
+.card.editable {
+  background: hsl(185, 18%, 14%);
+}
+
+.card.editable .card-btn {
+  display: none;
+}
+
+.card.editable .card-hidden {
+  display: grid;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,800&display=swap');

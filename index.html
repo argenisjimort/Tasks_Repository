@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Card Design</title>
+    <meta name="viewport" content="width=device-witdh, user-scalable=no">
+    
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="taskform.css">
+    
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--
+      taken from:
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      https://fonts.google.com/icons?icon.query=options
+
+      <i class="material-icons">face</i>
+      -->
+  </head>
+  <body>
+
+    <div id="grid">
+      
+    <section class="section" id="task-form-section">
+        <div class="section-content form-container" id="task-form-wrap">
+          
+        <button id="task-form-btn" onclick="taskFormToggle()">Submit new Task</button>
+        
+        <form class="form" id="task-form">
+          <fieldset>
+            <legend>Insert a new task</legend>
+            <input
+            id="title-input"
+            class="input"
+            type="text"
+            placeholder="Title"
+            required
+            autocomplete="off"
+            >
+            
+            <textarea
+            id="description-input"
+            class="input"
+            placeholder="Description"
+            required
+            autocomplete="off"
+            ></textarea>
+            
+            <input
+            id="date-input"
+            class="input"
+            type="date"
+            placeholder="date"
+            required
+            autocomplete="off"
+            >
+            
+            <input
+            id="task-submit-btn"
+            type="submit" 
+            class="btn form-btn light-btn"
+            value="submit"
+            >
+          </fieldset>
+          
+        </form>
+        
+      </div>
+    </section>
+    
+    <section class="section dark-section" id="cards-section">
+      <div class="section-content cards-container" id="cards-container">
+        
+        <template id="card-template">
+          <div class="card-wrap">
+            <div class="card">
+              <div class="card-options-list">
+                <button class="btn card-option-btn" onclick="editCard(this)">Edit</button>
+                <button class="btn card-option-btn" onclick="deleteCard(this)">Delete</button>
+              </div>
+              <date class="card-date">
+                12-15-2021
+              </date>
+              <input type="date" class="input card-new-date card-hidden">
+
+              <h5 class="card-title">Card title to make an eglish asigment asdasdasdasdasd</h5>
+              <p class="card-text">
+                Realizar investigación académica sobre la Lógica informática, conceptos, características, usos y aplicaciones.
+                La investigación debe poseer portada, introducción, abstract, 5 cuartillas, conclusión, anexos y referencias.
+                      todo la investigación debe estar enmarcada en las normas APA 7ma edición.
+                Todas las referencias deben de ser obtenidas de repositorios universitarios, no mayor a 10 años de publicación.
+                La investigación debe tener como mínimo 12 citas lo que equivale a 12 referencias.
+                SIguen vigentes las reglas del grupo de Whatsaap.
+                Enviar el trabajo al correo académico: logica.unellez.tariba@gmail.com
+  
+                Realizar investigación académica sobre la Lógica informática, conceptos, características, usos y aplicaciones.
+                La investigación debe poseer portada, introducción, abstract, 5 cuartillas, conclusión, anexos y referencias.
+                      todo la investigación debe estar enmarcada en las normas APA 7ma edición.
+                Todas las referencias deben de ser obtenidas de repositorios universitarios, no mayor a 10 años de publicación.
+                La investigación debe tener como mínimo 12 citas lo que equivale a 12 referencias.
+                SIguen vigentes las reglas del grupo de Whatsaap.
+                Enviar el trabajo al correo académico: logica.unellez.tariba@gmail.com
+  
+              </p>
+              <div class="btns-container">
+                <button class="btn invisible-btn card-btn" onclick="cardShowMore(this)"> <i class="fa fa-chevron-down"></i> More </button>
+                <button class="btn invisible-btn card-btn card-done-btn" onclick="cardToggleDone(this)"> <i class="fa fa-check"></i>Done</button>
+                <button class="btn invisible-btn card-btn" onclick="showCardOptions(this)"> <i class="fa fa-ellipsis-h"></i> Options </button>
+
+                <button class="btn invisible-btn card-btn card-hidden" onclick="submitChanges(this)"> <i class="fa fa-floppy-o"></i> Save Changes </button>
+                <button class="btn invisible-btn card-btn card-hidden" onclick="cancelEdit(this)"> <i class="fa fa-times"></i> Cancel</button>
+                
+
+              </div>
+              <div class="card-id">45</div>
+            </div>
+          </div>
+        </template>
+        
+        
+      </div>
+    </section>
+  </div> <!-- /GRID -->
+    
+  
+  <script src="main.js"></script>
+
+  </body>
+</html>

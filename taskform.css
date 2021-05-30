@@ -1,0 +1,112 @@
+#task-form-section {
+    padding: 0;
+    z-index: 2;
+}
+
+#cards-section {
+    min-height: calc(100vh - 60px);
+    z-index: 0;
+}
+
+#task-form-wrap{
+    width: 100%;
+    height: 0;
+
+    position: fixed;
+    top:0;
+    left: 0;
+
+    z-index: 3;
+}
+
+#task-form-btn {
+    width: 100%;
+    height: 60px;
+
+    background: var(--action-color);
+    color: hsl(0, 0%, 85%);
+    font-weight: 700;
+    border: 0;
+}
+
+#task-form-btn:hover {
+    cursor: pointer;
+}
+
+#task-form {
+    margin: 0;
+    transform: translateX(-100%);
+
+    transition: all 250ms 50ms;
+    z-index: 99;
+}
+
+#task-form.in {
+    transform: translateX(0);
+}
+
+body{
+    padding-top: 60px;
+}
+
+@media (min-width: 1100px) {
+
+    body{
+        padding-top: 0;
+    }
+
+    #grid{
+        width: 100%;
+        height: 100vh;
+
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+    }
+
+    #task-form-section {
+        padding: 125px 20px;
+        grid-column: 1;
+
+        display: grid;
+
+        background: var(--card-bg);
+    }
+
+    #cards-section {
+        padding: 50px 20px;
+        grid-column: 2;
+
+        overflow-y: scroll;
+    }
+
+    #cards-section .cards-container{
+        padding: 0;
+    }
+
+    .card-wrap{
+        padding: 0;
+    }
+
+    #task-form-wrap {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    #task-form-btn {
+        display: none;
+    }
+
+    #task-form{
+        transform: translateX(0);
+        margin: auto;
+        max-width: 400px;
+    }
+
+    #task-form fieldset{
+        grid-row-gap: 20px;
+    }
+
+}
